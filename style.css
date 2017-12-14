@@ -26,18 +26,22 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 ----------------------------------------------------------------
 # Global Adjustments
 # Site
-# Post Meta
 # Main Content
 # Footer
 # Alignments
 # Widgets
 # Content
 	## Posts and pages
+		### Post Meta
 	## Comments
 # Infinite scroll
 # Media
 	## Captions
 	## Galleries
+# Media Queries
+	## Bootstrap Media Queries
+		### Mobile First Method
+	## Custom Media Queries
 --------------------------------------------------------------*/
 
 
@@ -66,6 +70,15 @@ input {
 }
 
 
+/* Enable FontAwesome to be used in these areas...  */
+
+.hentry .entry-title a:before,
+.entry-footer a:before {
+    font-family: FontAwesome;
+    margin-right: 2px;
+}
+
+
 /*--------------------------------------------------------------
 # Site
 --------------------------------------------------------------*/
@@ -73,30 +86,6 @@ input {
 .site-content {
     background: #f7f7f7;
     padding: 25px 0 50px 0;
-}
-
-
-/*--------------------------------------------------------------
-# Post Meta
---------------------------------------------------------------*/
-
-.entry-header a,
-.entry-header a:visited,
-.entry-header a:active {
-    color: #333;
-}
-
-.entry-meta {
-    font-style: italic;
-}
-
-.entry-meta>.posted-on {
-    margin-right: 10px;
-}
-
-.entry-meta .fas {
-    color: #ccc;
-    margin-right: 2px;
 }
 
 
@@ -136,6 +125,10 @@ input {
 .footer-menu>li:first-child>a {
     border: none;
     padding: 0 8px 0 0;
+}
+
+.copyright {
+    float: left;
 }
 
 
@@ -226,6 +219,43 @@ input {
 }
 
 
+/*--------------------------------------------------------------
+### Post Meta
+--------------------------------------------------------------*/
+
+.entry-header a,
+.entry-header a:visited,
+.entry-header a:active {
+    color: #333;
+}
+
+.entry-meta {
+    font-style: italic;
+}
+
+.entry-meta>.posted-on {
+    margin-right: 10px;
+}
+
+.entry-meta .fas {
+    color: #ccc;
+    margin-right: 2px;
+}
+
+
+/* Post Entry Footer */
+
+.entry-footer span {
+    margin-right: 25px;
+}
+
+.entry-footer span:last-of-type {
+    margin-right: 0;
+}
+
+.entry-footer a:before {
+	content: '/f044';
+]
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
@@ -373,3 +403,52 @@ img {
 .gallery-caption {
     display: block;
 }
+
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
+## Bootstrap Media Queries
+--------------------------------------------------------------*/
+
+
+/*
+###==========  Mobile First Method  ==========
+*/
+
+
+/* Custom, iPhone Retina */
+
+@media only screen and (min-width: 320px) {}
+
+
+/* Extra Small Devices, Phones */
+
+@media only screen and (min-width: 480px) {}
+
+
+/* Small Devices, Tablets */
+
+@media only screen and (min-width: 768px) {}
+
+
+/* Medium Devices, Desktops */
+
+@media only screen and (min-width: 992px) {
+    .copyright {
+        float: right;
+    }
+}
+
+
+/* Large Devices, Wide Screens */
+
+@media only screen and (min-width: 1200px) {}
+
+
+/*--------------------------------------------------------------
+## Custom Media Queries
+--------------------------------------------------------------*/
