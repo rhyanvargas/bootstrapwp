@@ -24,10 +24,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# Global Adjustments
+# Site
 # Post Meta
 # Main Content
 # Footer
-# Global Adjustments
 # Alignments
 # Widgets
 # Content
@@ -41,6 +42,41 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 
 /*--------------------------------------------------------------
+# Global Adjustments
+--------------------------------------------------------------*/
+
+input {
+    max-width: 100%;
+}
+
+#primary,
+#secondary {
+    -ms-word-break: break-all;
+    /* BE VERY CARAEFUL with this... breaks normal words */
+    word-break: break-all;
+    /* Non standard for WebKit */
+    word-break: break-word;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+    hyphens: auto;
+}
+
+.well {
+    background: #fff;
+}
+
+
+/*--------------------------------------------------------------
+# Site
+--------------------------------------------------------------*/
+
+.site-content {
+    background: #f7f7f7;
+    padding: 25px 0 50px 0;
+}
+
+
+/*--------------------------------------------------------------
 # Post Meta
 --------------------------------------------------------------*/
 
@@ -51,25 +87,26 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 }
 
 .entry-meta {
-	font-style: italic;
+    font-style: italic;
 }
 
 .entry-meta>.posted-on {
     margin-right: 10px;
 }
 
-.posted-on .fas,
-.byline .fas {
+.entry-meta .fas {
     color: #ccc;
+    margin-right: 2px;
 }
 
 
 /*--------------------------------------------------------------
-# Main Content
+# Header
 --------------------------------------------------------------*/
 
-.site-content {
-    padding: 25px 0 50px 0;
+.navbar {
+    margin-bottom: 0px;
+    background: #fff;
 }
 
 
@@ -99,27 +136,6 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 .footer-menu>li:first-child>a {
     border: none;
     padding: 0 8px 0 0;
-}
-
-
-/*--------------------------------------------------------------
-# Global Adjustments
---------------------------------------------------------------*/
-
-input {
-    max-width: 100%;
-}
-
-#primary,
-#secondary {
-    -ms-word-break: break-all;
-    /* BE VERY CARAEFUL with this... breaks normal words */
-    word-break: break-all;
-    /* Non standard for WebKit */
-    word-break: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    hyphens: auto;
 }
 
 
@@ -167,6 +183,11 @@ input {
 
 
 /*--------------------------------------------------------------
+## Sidebar
+--------------------------------------------------------------*/
+
+
+/*--------------------------------------------------------------
 # Content
 --------------------------------------------------------------*/
 
@@ -179,8 +200,14 @@ input {
     display: block;
 }
 
+
+/* Edit Post cards on the main post listing page */
+
 .hentry {
     margin: 0 0 1.5em;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    padding: 50px 50px 50px;
 }
 
 .updated:not(.published) {
@@ -247,21 +274,21 @@ input {
 }
 
 
-/* Make all images responsive - using bootstrap styles */
-
-img[class*="wp-image-"] {
-    display: block;
-    max-width: 100%;
-    height: auto;
-}
-
-
 /* Make sure embeds and iframes fit their containers. */
 
 embed,
 iframe,
+img,
 object {
     max-width: 100%;
+}
+
+
+/* Make all images responsive - using bootstrap styles */
+
+img {
+    display: block;
+    height: auto;
 }
 
 
