@@ -37,6 +37,43 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 
 /*--------------------------------------------------------------
+# Main Content
+--------------------------------------------------------------*/
+
+.site-content {
+	padding: 25px 0 50px 0;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+
+.site-footer {
+    padding: 50px 0;
+}
+
+.footer-menu {
+    margin-left: 0;
+    padding: 0 0 30px 0;
+}
+
+.footer-menu li {
+    display: inline;
+    list-style-type: none;
+}
+
+.footer-menu li a {
+    border-left: 1px solid #ddd;
+    padding: 0 8px;
+}
+
+.footer-menu>li:first-child>a {
+    border: none;
+    padding: 0 8px 0 0;
+}
+
+
+/*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
 
@@ -184,10 +221,11 @@ input {
 /* Make all images responsive - using bootstrap styles */
 
 img[class*="wp-image-"] {
-	display: block;
-	max-width: 100%;
-	height: auto;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
+
 
 /* Make sure embeds and iframes fit their containers. */
 

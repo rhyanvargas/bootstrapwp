@@ -47,6 +47,11 @@ if ( ! function_exists( 'bootstrapsasswp_setup' ) ) :
 			'menu-1' => esc_html__( 'Primary', 'bootstrapsasswp' ),
 		) );
 
+		register_nav_menus(array(
+    		'footer-menu' => esc_html__('Footer Menu', 'bootstrapsasswp'),
+		));
+
+
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
