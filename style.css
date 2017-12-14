@@ -24,6 +24,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
+# Post Meta
+# Main Content
+# Footer
+# Global Adjustments
 # Alignments
 # Widgets
 # Content
@@ -37,12 +41,37 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 
 /*--------------------------------------------------------------
+# Post Meta
+--------------------------------------------------------------*/
+
+.entry-header a,
+.entry-header a:visited,
+.entry-header a:active {
+    color: #333;
+}
+
+.entry-meta {
+	font-style: italic;
+}
+
+.entry-meta>.posted-on {
+    margin-right: 10px;
+}
+
+.posted-on .fas,
+.byline .fas {
+    color: #ccc;
+}
+
+
+/*--------------------------------------------------------------
 # Main Content
 --------------------------------------------------------------*/
 
 .site-content {
-	padding: 25px 0 50px 0;
+    padding: 25px 0 50px 0;
 }
+
 
 /*--------------------------------------------------------------
 # Footer
@@ -74,7 +103,7 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 
 
 /*--------------------------------------------------------------
-# Alignments
+# Global Adjustments
 --------------------------------------------------------------*/
 
 input {
