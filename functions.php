@@ -188,3 +188,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Load Bootstrap Menu
  */
 require get_template_directory() . '/inc/bootstrap-walker.php';
+
+/**
+ * Load Extra Functions
+ */
+require get_template_directory() . '/inc/extras.php';
+
