@@ -7,6 +7,34 @@
  * @package bootstrapsasswp
  */
 
+ if ( ! function_exists( 'bsw_posts_navigation' ) ) :
+	/**
+	 * Creates the posts pagination navigation
+	 */
+	function bsw_posts_navigation() {
+		// Don't print empty markup if there's only one page.
+		if ($GLOBALS['wp_query']->max_num_pages < 2) {
+			return;
+		}
+		?>
+		<nav class="navigation paging-navigation" role="navigation">
+			<h1 class="sr-only"><?php _e('Posts navigation', 'bootstrapwp');?></h1>
+			<ul class="pager">
+
+				<?php if (get_next_posts_link()): ?>
+				<li class="previous"><?php next_posts_link(__('<span class="meta-nav">&larr;</span> Older posts', 'bootstrapwp'));?></li>
+				<?php endif;?>
+
+				<?php if (get_previous_posts_link()): ?>
+				<li class="next"><?php previous_posts_link(__('Newer posts <span class="meta-nav">&rarr;</span>', 'bootstrapwp'));?></li>
+				<?php endif;?>
+
+			</ul><!-- .nav-links -->
+		</nav><!-- .navigation -->
+		<?php
+	}
+endif;
+
 if ( ! function_exists( 'bootstrapsasswp_posted_on' ) ) :
 	/**
 	 * Prints HTML with meta information for the current post-date/time and author.

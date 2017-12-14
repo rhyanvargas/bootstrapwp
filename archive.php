@@ -8,8 +8,9 @@
  */
 
 get_header(); ?>
-
-	<div id="primary" class="content-area">
+<div class="container">
+	<div class="row">
+	<div id="primary" class="col-md-10">
 		<main id="main" class="site-main">
 
 		<?php
