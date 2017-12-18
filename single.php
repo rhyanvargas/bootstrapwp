@@ -10,7 +10,7 @@
 get_header(); ?>
 <div class="container">
 	<div class="row">
-		<div id="primary" class="col-md-10 col-md-push-1">
+		<div id="primary" class="col-md-12">
 			<main id="main" class="site-main">
 
 			<?php

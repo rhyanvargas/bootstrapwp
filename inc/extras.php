@@ -19,3 +19,16 @@ function custom_edit_post_link($output) {
     
 }
 add_filter('edit_post_link', 'custom_edit_post_link');
+
+/**
+ *  Custom Comment Form
+ */
+function custom_comment_form( $args ) {
+    // submit button
+    $args['class_submit'] = 'btn btn-primary btn-md'; // since WP 4.1
+    
+    return $args;
+    
+}
+
+add_filter( 'comment_form_defaults', 'custom_comment_form' );

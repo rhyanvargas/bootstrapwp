@@ -26,18 +26,20 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 ----------------------------------------------------------------
 # Global Adjustments
 # Site
+    ## Posts and pages
 # Main Content
 # Footer
 # Alignments
 # Widgets
 # Content
-	## Posts and pages
-		### Post Meta
+    ## Post Meta
+    ## Post-Navigation
 	## Comments
 # Infinite scroll
 # Media
 	## Captions
-	## Galleries
+    ## Galleries
+# Overrides
 # Media Queries
 	## Bootstrap Media Queries
 		### Mobile First Method
@@ -48,6 +50,11 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 /*--------------------------------------------------------------
 # Global Adjustments
 --------------------------------------------------------------*/
+
+body {
+    color: #767676;
+    font-size:16px;
+}
 
 input {
     max-width: 100%;
@@ -92,7 +99,25 @@ input {
 
 .site-content {
     background: #f7f7f7;
-    padding: 25px 0 50px 0;
+    padding: 0;
+}
+
+/*--------------------------------------------------------------
+## Posts - Pages - Areas
+--------------------------------------------------------------*/
+
+.sticky {
+    display: block;
+}
+
+/* Edit Post cards on the main post listing page */
+.updated:not(.published) {
+    display: none;
+}
+
+.page-links {
+    clear: both;
+    margin: 0 0 1.5em;
 }
 
 
@@ -111,7 +136,7 @@ input {
 --------------------------------------------------------------*/
 
 .site-footer {
-    padding: 50px 0;
+    padding: 60px 0 40px ;
 }
 
 .footer-menu {
@@ -183,7 +208,7 @@ input {
 
 
 /*--------------------------------------------------------------
-## Sidebar
+# Sidebar
 --------------------------------------------------------------*/
 
 
@@ -191,64 +216,39 @@ input {
 # Content
 --------------------------------------------------------------*/
 
-
-/*--------------------------------------------------------------
-## Posts and pages
---------------------------------------------------------------*/
-
-.sticky {
-    display: block;
-}
-
-/* Edit Post cards on the main post listing page */
-
-.hentry {
-    margin: 0 0 1.5em;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
-    background-color: #fff;
-    padding: 1.5em;
-}
-
-.updated:not(.published) {
-    display: none;
-}
-
 .page-content,
 .entry-content,
 .entry-summary {
-    margin: 1.5em 0 0;
     padding-bottom: 2.5em;
 }
 
-.entry-content {
-    border-bottom: 2px solid #ccc;
-    margin-bottom: 1.5em;
+.entry-content,
+.comments-area {
+    background-color: #fff;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
-
-.page-links {
-    clear: both;
-    margin: 0 0 1.5em;
+.entry-header {
+    text-align: center;
+    padding: 1.875rem 1.25rem;
 }
-
+ 
+.entry-title {
+    font-style: normal;
+    color: 
+}
 
 /*--------------------------------------------------------------
-### Post Meta
+## Post Meta
 --------------------------------------------------------------*/
 
-[class^="entry-"] a,
+/* [class^="entry-"] a,
 [class^="entry-"] a:visited,
 [class^="entry-"] a:active {
-    color: #7d7d7d;
-}
-/* 
-[class^="entry-"] a:hover {
-    font-size: 1.05em;
+    color: #191919;
 } */
-
-[class^="entry-"] {
-    font-style: italic;
-}
 
 [class^="entry-"] .fas {
     color: #ccc;
@@ -258,16 +258,17 @@ input {
 [class^="entry-"] span {
     margin-right: 10px;
     display: inline-block;
+    font-style: italic;
 }
 
 [class^="entry-"] span:last-of-type {
     margin-right: 0;
 }
 
-.entry-title a{
-    color: #333;
-    font-style: normal;
+.entry-meta {
+    font-size: 1.3rem;
 }
+
 /* Comments Link */
 .comments-link span {
     display: initial;
@@ -277,18 +278,85 @@ input {
 }
 
 /* Edit Button */
+.edit-link,
+a.post-edit-link {
+    width: 100%;
+    font-size: 1.4rem;
+}
+
+.edit-link span,
+a.post-edit-link {
+    font-style: normal;
+}
+a.post-edit-link {
+    padding:1rem;
+}
 a.post-edit-link,
 a.post-edit-link:visited,
 a.post-edit-link:active {
     color: #fff;
-    font-style: normal;
+    
 }
 .post-edit-link:before {
     content: '\f044';
 }
+
+/*--------------------------------------------------------------
+## Post-Navigation
+--------------------------------------------------------------*/
+
+.pager {
+    margin: 0;
+}
+
+.pager:before,
+.pager:after {
+    display: block;
+}
+
+.pager li {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+}
+
+.pager li>a {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    padding:4.0rem 2.0rem;
+    text-align: center;
+    width: 100%;
+
+}
+
+.pager li>a:hover {
+    background: #6965655b;
+    border-radius: 0px;
+
+}
+
+.pager .previous {
+    border-right: 1px solid #3333331f;
+}
+
+.meta-nav {
+    display: block;
+    font-size: 2.4rem;
+}
+
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
+
+.comments-area textarea{
+    background: #f7f7f7;
+    width: 100%;
+}
+
+.comments-area label{
+    display:block;
+}
 .comment-content a {
     word-wrap: break-word;
 }
@@ -325,6 +393,7 @@ a.post-edit-link:active {
 embed,
 iframe,
 img,
+img[class^="wp-image-"],
 object {
     max-width: 100%;
 }
@@ -398,11 +467,30 @@ img {
 }
 
 /*--------------------------------------------------------------
-# Media Queries
+# Overrides
 --------------------------------------------------------------*/
 
+/* Links and Titles*/
+a, 
+span a, 
+p a.read-more,
+.entry-title {
+    color: #191919;
+}
+a:hover {
+    color: inherit
+}
+
+/* Spacing */
+#primary.col-md-12 {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+
 /*--------------------------------------------------------------
-## Bootstrap Media Queries
+# Media Queries - bootstrap breakpoints
 --------------------------------------------------------------*/
 
 /*

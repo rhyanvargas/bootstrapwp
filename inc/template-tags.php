@@ -116,8 +116,8 @@ if ( ! function_exists( 'bootstrapsasswp_entry_footer' ) ) :
 	 * Prints HTML with meta information for the comments.
 	 */
 	function bootstrapsasswp_entry_footer() {
-		// ! is_single() && 
-		if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+
+		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 			echo '<span class="comments-link"><i class="fas fa-comment fa-flip-horizontal"></i>';
 			comments_popup_link(
 				sprintf(
