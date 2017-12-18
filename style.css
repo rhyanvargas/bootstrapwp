@@ -222,11 +222,17 @@ input {
     padding-bottom: 2.5em;
 }
 
+.entry-footer,
+.entry-content,
+.comments-area  {
+    margin-bottom: 2rem;
+}
+
+
 .entry-content,
 .comments-area {
     background-color: #fff;
     padding: 2.5rem;
-    margin-bottom: 2rem;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
 }
 
@@ -237,8 +243,8 @@ input {
  
 .entry-title {
     font-style: normal;
-    color: 
 }
+
 
 /*--------------------------------------------------------------
 ## Post Meta
@@ -334,10 +340,6 @@ a.post-edit-link:active {
     background: #6965655b;
     border-radius: 0px;
 
-}
-
-.pager .previous {
-    border-right: 1px solid #3333331f;
 }
 
 .meta-nav {
