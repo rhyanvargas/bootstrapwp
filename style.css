@@ -1,4 +1,4 @@
-/*!
+    /*!
 Theme Name: bootstrapsasswp
 Theme URI: http://underscores.me/
 Author: Rhyan Vargas
@@ -71,11 +71,18 @@ input {
 
 
 /* Enable FontAwesome to be used in these areas...  */
-
 .hentry .entry-title a:before,
+.post-edit-link:before,
 .entry-footer a:before {
-    font-family: FontAwesome;
-    margin-right: 2px;
+    font-family:  Font Awesome\ 5 free;
+    margin-right: 5px;
+}
+
+/* Remove Margin bottom from the last paragraph of content section (bootstrap's default styling) */
+
+.entry-content p:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
 }
 
 
@@ -193,14 +200,13 @@ input {
     display: block;
 }
 
-
 /* Edit Post cards on the main post listing page */
 
 .hentry {
     margin: 0 0 1.5em;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
     background-color: #fff;
-    padding: 50px 50px 50px;
+    padding: 1.5em;
 }
 
 .updated:not(.published) {
@@ -211,7 +217,14 @@ input {
 .entry-content,
 .entry-summary {
     margin: 1.5em 0 0;
+    padding-bottom: 2.5em;
 }
+
+.entry-content {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 1.5em;
+}
+
 
 .page-links {
     clear: both;
@@ -252,48 +265,36 @@ input {
 .entry-footer span:last-of-type {
     margin-right: 0;
 }
-
-.entry-footer a:before {
-	content: '/f044';
-]
+.post-edit-link:before {
+    content: '\f044';
+}
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-
 .comment-content a {
     word-wrap: break-word;
 }
-
 .bypostauthor {
     display: block;
 }
 
-
 /*--------------------------------------------------------------
 # Infinite scroll
 --------------------------------------------------------------*/
-
-
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
-
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
     /* Theme Footer (when set to scrolling) */
     display: none;
 }
-
-
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
-
 .infinity-end.neverending .site-footer {
     display: block;
 }
 
-
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
-
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -302,152 +303,107 @@ input {
     margin-top: 0;
     padding: 0;
 }
-
-
 /* Make sure embeds and iframes fit their containers. */
-
 embed,
 iframe,
 img,
 object {
     max-width: 100%;
 }
-
-
 /* Make all images responsive - using bootstrap styles */
-
 img {
     display: block;
     height: auto;
 }
-
-
 /* Make sure logo link wraps around logo image. */
-
 .custom-logo-link {
     display: inline-block;
 }
 
-
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
-
 .wp-caption {
     margin-bottom: 1.5em;
     max-width: 100%;
 }
-
 .wp-caption img[class*="wp-image-"] {
     display: block;
     margin-left: auto;
     margin-right: auto;
 }
-
 .wp-caption .wp-caption-text {
     margin: 0.8075em 0;
 }
-
 .wp-caption-text {
     text-align: center;
 }
 
-
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
-
 .gallery {
     margin-bottom: 1.5em;
 }
-
 .gallery-item {
     display: inline-block;
     text-align: center;
     vertical-align: top;
     width: 100%;
 }
-
 .gallery-columns-2 .gallery-item {
     max-width: 50%;
 }
-
 .gallery-columns-3 .gallery-item {
     max-width: 33.33%;
 }
-
 .gallery-columns-4 .gallery-item {
     max-width: 25%;
 }
-
 .gallery-columns-5 .gallery-item {
     max-width: 20%;
 }
-
 .gallery-columns-6 .gallery-item {
     max-width: 16.66%;
 }
-
 .gallery-columns-7 .gallery-item {
     max-width: 14.28%;
 }
-
 .gallery-columns-8 .gallery-item {
     max-width: 12.5%;
 }
-
 .gallery-columns-9 .gallery-item {
     max-width: 11.11%;
 }
-
 .gallery-caption {
     display: block;
 }
-
 
 /*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
 
-
 /*--------------------------------------------------------------
 ## Bootstrap Media Queries
 --------------------------------------------------------------*/
 
-
 /*
 ###==========  Mobile First Method  ==========
 */
-
-
 /* Custom, iPhone Retina */
-
 @media only screen and (min-width: 320px) {}
-
-
 /* Extra Small Devices, Phones */
-
 @media only screen and (min-width: 480px) {}
-
-
 /* Small Devices, Tablets */
-
 @media only screen and (min-width: 768px) {}
-
-
 /* Medium Devices, Desktops */
-
 @media only screen and (min-width: 992px) {
     .copyright {
         float: right;
     }
 }
-
-
 /* Large Devices, Wide Screens */
-
 @media only screen and (min-width: 1200px) {}
-
 
 /*--------------------------------------------------------------
 ## Custom Media Queries
