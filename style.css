@@ -269,9 +269,13 @@ input {
     font-style: normal;
 }
 /* Comments Link */
+.comments-link span {
+    display: initial;
+}
 .comments-link .fa-comment {
     margin-right:5px;
 }
+
 /* Edit Button */
 a.post-edit-link,
 a.post-edit-link:visited,
