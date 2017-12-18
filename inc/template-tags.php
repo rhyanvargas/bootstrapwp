@@ -91,40 +91,38 @@ if ( ! function_exists( 'bootstrapsasswp_posted_on' ) ) :
 			'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 		);
 
-		echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+		// Hide category text for pages.
+		if ( 'post' === get_post_type() ) {
+			/* translators: used between list items, there is a space after the comma */
+			$categories_list = get_the_category_list( esc_html__( ', ', 'bootstrapsasswp' ) );
+			if ( $categories_list ) {
+				/* translators: 1: list of categories. */
+				$categories = sprintf(
+					 '<span class="cat-links">' . _x( '<i class="fas fa-folder-open"></i> %1$s', 'bootstrapsasswp' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			} 
+		}
+		
+		echo 	'<span class="posted-on">' . $posted_on . '</span>
+				<span class="byline"> ' . $byline . '</span>
+				<span class="categories-list"> ' . $categories . '</span>'; // WPCS: XSS OK.
 
 	}
 endif;
+
+
 
 if ( ! function_exists( 'bootstrapsasswp_entry_footer' ) ) :
 	/**
 	 * Prints HTML with meta information for the categories, tags and comments.
 	 */
 	function bootstrapsasswp_entry_footer() {
-		// Hide category and tag text for pages.
-		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ', ', 'bootstrapsasswp' ) );
-			if ( $categories_list ) {
-				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'bootstrapsasswp' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-			}
-
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'bootstrapsasswp' ) );
-			if ( $tags_list ) {
-				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'bootstrapsasswp' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-			}
-		}
-
 		if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-			echo '<span class="comments-link">';
+			echo '<span class="comments-link"><i class="fas fa-comment fa-flip-horizontal"></i>';
 			comments_popup_link(
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'bootstrapsasswp' ),
+						__( 'Leave a Comment', 'bootstrapsasswp' ),
 						array(
 							'span' => array(
 								'class' => array(),

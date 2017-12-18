@@ -236,34 +236,48 @@ input {
 ### Post Meta
 --------------------------------------------------------------*/
 
-.entry-header a,
-.entry-header a:visited,
-.entry-header a:active {
-    color: #333;
+[class^="entry-"] a,
+[class^="entry-"] a:visited,
+[class^="entry-"] a:active {
+    color: #7d7d7d;
 }
+/* 
+[class^="entry-"] a:hover {
+    font-size: 1.05em;
+} */
 
-.entry-meta {
+[class^="entry-"] {
     font-style: italic;
 }
 
-.entry-meta>.posted-on {
-    margin-right: 10px;
-}
-
-.entry-meta .fas {
+[class^="entry-"] .fas {
     color: #ccc;
-    margin-right: 2px;
+    margin-right:2px;
 }
 
-
-/* Post Entry Footer */
-
-.entry-footer span {
-    margin-right: 25px;
+[class^="entry-"] span {
+    margin-right: 10px;
+    display: inline-block;
 }
 
-.entry-footer span:last-of-type {
+[class^="entry-"] span:last-of-type {
     margin-right: 0;
+}
+
+.entry-title a{
+    color: #333;
+    font-style: normal;
+}
+/* Comments Link */
+.comments-link .fa-comment {
+    margin-right:5px;
+}
+/* Edit Button */
+a.post-edit-link,
+a.post-edit-link:visited,
+a.post-edit-link:active {
+    color: #fff;
+    font-style: normal;
 }
 .post-edit-link:before {
     content: '\f044';
