@@ -1,4 +1,4 @@
-    /*!
+/*!
 Theme Name: bootstrapsasswp
 Theme URI: http://underscores.me/
 Author: Rhyan Vargas
@@ -20,11 +20,11 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 */
 
-
 /*--------------------------------------------------------------
 >>> TABLE OF CONTENTS:
 ----------------------------------------------------------------
 # Global Adjustments
+    ## Typogrophy
 # Site
     ## Posts and pages
 # Main Content
@@ -46,14 +46,13 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
 	## Custom Media Queries
 --------------------------------------------------------------*/
 
-
 /*--------------------------------------------------------------
 # Global Adjustments
 --------------------------------------------------------------*/
 
 body {
     color: #767676;
-    font-size:16px;
+    font-size: 16px;
 }
 
 input {
@@ -76,12 +75,11 @@ input {
     background: #fff;
 }
 
-
 /* Enable FontAwesome to be used in these areas...  */
 .hentry .entry-title a:before,
 .post-edit-link:before,
 .entry-footer a:before {
-    font-family:  Font Awesome\ 5 free;
+    font-family: Font Awesome\ 5 free;
     margin-right: 5px;
 }
 
@@ -92,7 +90,17 @@ input {
     padding-bottom: 0;
 }
 
-
+/*--------------------------------------------------------------
+## Typographhy
+--------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #191919;
+}
 /*--------------------------------------------------------------
 # Site
 --------------------------------------------------------------*/
@@ -117,9 +125,8 @@ input {
 
 .page-links {
     clear: both;
-    margin: 0 0 1.5em;
+    margin: 0 0 1em;
 }
-
 
 /*--------------------------------------------------------------
 # Header
@@ -130,13 +137,12 @@ input {
     background: #fff;
 }
 
-
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
 
 .site-footer {
-    padding: 60px 0 40px ;
+    padding: 60px 0 40px;
 }
 
 .footer-menu {
@@ -154,7 +160,7 @@ input {
     padding: 0 8px;
 }
 
-.footer-menu>li:first-child>a {
+.footer-menu > li:first-child > a {
     border: none;
     padding: 0 8px 0 0;
 }
@@ -162,7 +168,6 @@ input {
 .copyright {
     float: left;
 }
-
 
 /*--------------------------------------------------------------
 # Alignments
@@ -187,7 +192,6 @@ input {
     margin-right: auto;
 }
 
-
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
@@ -206,11 +210,9 @@ input {
     padding-left: 10px;
 }
 
-
 /*--------------------------------------------------------------
 # Sidebar
 --------------------------------------------------------------*/
-
 
 /*--------------------------------------------------------------
 # Content
@@ -224,10 +226,9 @@ input {
 
 .entry-footer,
 .entry-content,
-.comments-area  {
+.comments-area {
     margin-bottom: 2rem;
 }
-
 
 .entry-content,
 .comments-area {
@@ -240,11 +241,10 @@ input {
     text-align: center;
     padding: 1.875rem 1.25rem;
 }
- 
+
 .entry-title {
     font-style: normal;
 }
-
 
 /*--------------------------------------------------------------
 ## Post Meta
@@ -258,7 +258,7 @@ input {
 
 [class^="entry-"] .fas {
     color: #ccc;
-    margin-right:2px;
+    margin-right: 2px;
 }
 
 [class^="entry-"] span {
@@ -280,13 +280,13 @@ input {
     display: initial;
 }
 .comments-link .fa-comment {
-    margin-right:5px;
+    margin-right: 5px;
 }
 
 /* Edit Button */
 .edit-link,
 a.post-edit-link {
-    width: 100%;
+    /* width: 100%; */
     font-size: 1.4rem;
 }
 
@@ -295,16 +295,15 @@ a.post-edit-link {
     font-style: normal;
 }
 a.post-edit-link {
-    padding:1rem;
+    padding: 0.5rem;
 }
 a.post-edit-link,
 a.post-edit-link:visited,
 a.post-edit-link:active {
     color: #fff;
-    
 }
 .post-edit-link:before {
-    content: '\f044';
+    content: "\f044";
 }
 
 /*--------------------------------------------------------------
@@ -326,20 +325,18 @@ a.post-edit-link:active {
     vertical-align: middle;
 }
 
-.pager li>a {
+.pager li > a {
     background: none;
     border: none;
     font-size: 1.4rem;
-    padding:4.0rem 2.0rem;
+    padding: 4rem 2rem;
     text-align: center;
     width: 100%;
-
 }
 
-.pager li>a:hover {
+.pager li > a:hover {
     background: #6965655b;
     border-radius: 0px;
-
 }
 
 .meta-nav {
@@ -351,19 +348,108 @@ a.post-edit-link:active {
 ## Comments
 --------------------------------------------------------------*/
 
-.comments-area textarea{
+/* Comment form */
+.comments-area textarea {
     background: #f7f7f7;
     width: 100%;
 }
 
-.comments-area label{
-    display:block;
+.comments-area label {
+    /* display: block; */
 }
 .comment-content a {
     word-wrap: break-word;
 }
 .bypostauthor {
     display: block;
+}
+
+/* List of Comments */
+.comment-content a {
+    word-wrap: break-word;
+}
+
+.comments-title,
+.comment-reply-title {
+    padding-bottom: 9px;
+    margin: 40px 0 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+ol.comment-list,
+ol.comment-list .children {
+    list-style: none;
+}
+
+ol.comment-list {
+    padding-left: 0;
+}
+
+.comment-author .avatar {
+    margin-right: 25px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    -webkit-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+    padding: 4px;
+}
+
+.comment-meta {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.comment-details {
+    overflow: hidden;
+    zoom: 1;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #ddd;
+}
+
+.comment-details .reply {
+    margin-top: 10px;
+}
+
+.comment-date a {
+    font-size: 11px;
+    color: #777;
+    margin-right: 10px;
+}
+
+#commentform #comment {
+    width: 100% !important;
+}
+
+#commentform #submit {
+    display: inline-block;
+    padding: 6px 12px;
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 4px;
+
+    color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+
+#commentform #submit:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
 }
 
 /*--------------------------------------------------------------
@@ -473,14 +559,13 @@ img {
 --------------------------------------------------------------*/
 
 /* Links and Titles*/
-a, 
-span a, 
-p a.read-more,
-.entry-title {
+a,
+span a,
+p a.read-more {
     color: #191919;
 }
 a:hover {
-    color: inherit
+    color: inherit;
 }
 
 /* Spacing */
@@ -488,8 +573,6 @@ a:hover {
     padding-left: 0;
     padding-right: 0;
 }
-
-
 
 /*--------------------------------------------------------------
 # Media Queries - bootstrap breakpoints
@@ -499,11 +582,14 @@ a:hover {
 ###==========  Mobile First Method  ==========
 */
 /* Custom, iPhone Retina */
-@media only screen and (min-width: 320px) {}
+@media only screen and (min-width: 320px) {
+}
 /* Extra Small Devices, Phones */
-@media only screen and (min-width: 480px) {}
+@media only screen and (min-width: 480px) {
+}
 /* Small Devices, Tablets */
-@media only screen and (min-width: 768px) {}
+@media only screen and (min-width: 768px) {
+}
 /* Medium Devices, Desktops */
 @media only screen and (min-width: 992px) {
     .copyright {
@@ -511,7 +597,8 @@ a:hover {
     }
 }
 /* Large Devices, Wide Screens */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (min-width: 1200px) {
+}
 
 /*--------------------------------------------------------------
 ## Custom Media Queries

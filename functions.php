@@ -204,3 +204,7 @@ require get_template_directory() . '/inc/bootstrap-walker.php';
  */
 require get_template_directory() . '/inc/extras.php';
 
+/**
+ * Comments Callback.
+ */
+require get_template_directory() . '/inc/comments-callback.php';
